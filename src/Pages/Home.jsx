@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 // Animation variants with delays and custom transitions
 const fadeIn = {
@@ -41,14 +42,14 @@ function Home() {
         <>
             {/* Hero Section - Interactive motion with search bar */}
             <motion.section
-                className="relative flex flex-col items-center justify-center min-h-[60vh] md:flex-row md:items-center md:min-h-[80vh] bg-cover bg-center px-4 sm:px-8 lg:px-[8%]"
+                className="relative flex flex-col items-center justify-center min-h-[60vh] md:flex-row md:items-center md:min-h-[80vh] bg-cover bg-center px-4 sm:px-6 md:px-8 lg:px-[8%]"
                 style={{ backgroundImage: "url('/Background.jpg')" }}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
                 variants={stagger}
             >
-                <motion.div className="w-full md:w-1/2 max-w-xl md:ml-0 lg:ml-[8%] py-10 md:py-0" variants={fadeIn}>
+                <motion.div className="w-full md:w-1/2 max-w-xl md:ml-0 lg:ml-[8%] py-8 md:py-0" variants={fadeIn}>
                     <motion.h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#292F36] mb-4 leading-tight" variants={zoomIn} whileHover={{ scale: 1.05, color: '#CDA274' }}>
                         Let Your Home<br />Be Unique
                     </motion.h1>
@@ -98,7 +99,7 @@ function Home() {
             </motion.section>
 
             {/* Services Section - Staggered flipUp, interactive cards */}
-            <motion.section className="py-20 px-[8%] bg-white"
+            <motion.section className="py-12 px-4 sm:px-6 md:px-8 lg:px-[8%] bg-white"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
@@ -139,13 +140,13 @@ function Home() {
             </motion.section>
 
             {/* About Section - RotateIn for image, Slide for text, interactive phone box */}
-            <motion.section className="py-20 px-[8%] bg-white flex flex-col md:flex-row items-center gap-12"
+            <motion.section className="py-12 px-4 sm:px-6 md:px-8 lg:px-[8%] bg-white flex flex-col md:flex-row items-center gap-8 md:gap-12"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
                 variants={stagger}
             >
-                <motion.div className="flex-1 max-w-xl" variants={slideLeft}>
+                <motion.div className="flex-1 w-full max-w-xl" variants={slideLeft}>
                     <motion.h2 className="text-4xl md:text-5xl font-bold text-[#292F36] mb-6 leading-tight" variants={zoomIn}>
                         We Create The Art<br />Of Stylish Living<br />Stylishly
                     </motion.h2>
@@ -173,12 +174,12 @@ function Home() {
                         Get Free Estimate <span className="text-lg">→</span>
                     </motion.button>
                 </motion.div>
-                <motion.div className="flex-1 flex justify-center" variants={rotateIn}>
+                <motion.div className="flex-1 w-full flex justify-center" variants={rotateIn}>
                     <motion.img
                         src="/image1.png"
                         alt="Stylish Interior"
-                        className="w-full max-w-xl h-auto rounded-[0_120px_0_0]"
-                        style={{ borderTopRightRadius: "120px" }}
+                        className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-xl h-auto rounded-[0_60px_0_0] md:rounded-[0_120px_0_0]"
+                        style={{ borderTopRightRadius: "60px", md: { borderTopRightRadius: "120px" } }}
                         initial="hidden"
                         whileInView="visible"
                         variants={zoomIn}
@@ -188,7 +189,7 @@ function Home() {
             </motion.section>
 
             {/* Testimonials Section - Staggered fade, interactive cards */}
-            <motion.section className="py-20 px-[8%] bg-[#F4F0EC] rounded-[60px] flex flex-col items-center"
+            <motion.section className="py-12 px-4 sm:px-6 md:px-8 lg:px-[8%] bg-[#F4F0EC] rounded-[32px] md:rounded-[60px] flex flex-col items-center"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
@@ -197,7 +198,7 @@ function Home() {
                 <motion.h2 className="text-4xl md:text-5xl font-bold text-[#292F36] mb-12 text-center" variants={fadeIn}>
                     What the People Thinks<br />About Us
                 </motion.h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-full">
                     <motion.div className="bg-white rounded-[32px] p-8 flex flex-col items-start cursor-pointer" variants={fadeIn} whileHover={{ scale: 1.05, boxShadow: '0 8px 32px #CDA27433' }} whileTap={{ scale: 0.98 }}>
                         <motion.div className="w-16 h-16 rounded-full overflow-hidden mb-4" variants={zoomIn}>
                             <motion.img src="pepole.png" alt="Nattasha Mith" className="w-full h-full object-cover" initial="hidden" whileInView="visible" variants={zoomIn} whileHover={{ scale: 1.1 }} />
@@ -232,7 +233,7 @@ function Home() {
             </motion.section>
 
             {/* Projects Section - Slide, Zoom, interactive cards */}
-            <motion.section className="py-20 px-[8%] bg-white"
+            <motion.section className="py-12 px-4 sm:px-6 md:px-8 lg:px-[8%] bg-white"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
@@ -241,7 +242,7 @@ function Home() {
                 <motion.h2 className="text-3xl md:text-4xl font-bold text-[#292F36] mb-12 text-center" variants={zoomIn}>
                     Our Projects
                 </motion.h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12 mt-8 md:mt-12">
                     <motion.div className="bg-white rounded-[40px] overflow-hidden shadow-sm flex flex-col cursor-pointer" variants={slideLeft} whileHover={{ scale: 1.05, boxShadow: '0 8px 32px #CDA27433' }} whileTap={{ scale: 0.98 }}>
                         <motion.img src="/kichen1.png" alt="Modern Kitchen" className="w-full h-[340px] object-cover rounded-t-[40px]" initial="hidden" whileInView="visible" variants={zoomIn} whileHover={{ scale: 1.08 }} />
                         <div className="p-6 flex items-center justify-between">
@@ -280,13 +281,13 @@ function Home() {
             </motion.section>
 
             {/* Stats Section - Zoom, interactive numbers */}
-            <motion.section className="w-full py-16 bg-[#F4F0EC] flex justify-center"
+            <motion.section className="w-full py-10 sm:py-12 md:py-16 bg-[#F4F0EC] flex justify-center"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
                 variants={stagger}
             >
-                <div className="w-full max-w-6xl grid grid-cols-2 md:grid-cols-4 gap-8 items-center text-center rounded-[40px]">
+                <div className="w-full max-w-6xl grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 items-center text-center rounded-[24px] md:rounded-[40px]">
                     <motion.div className="flex flex-col items-center justify-center cursor-pointer" variants={zoomIn} whileHover={{ scale: 1.12, color: '#CDA274' }}>
                         <motion.div className="text-6xl font-bold text-[#CDA274] mb-2" variants={zoomIn}>12</motion.div>
                         <motion.div className="text-gray-500 text-lg" variants={fadeIn}>Years Of Experience</motion.div>
@@ -310,7 +311,7 @@ function Home() {
             </motion.section>
 
             {/* Articles Section - Slide, Zoom, Fade, interactive cards */}
-            <motion.section className="py-20 px-[8%] bg-white"
+            <motion.section className="py-12 px-4 sm:px-6 md:px-8 lg:px-[8%] bg-white"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
@@ -323,7 +324,7 @@ function Home() {
                     It is a long established fact that a reader will be distracted by the of readable content
                     of a page when looking at its layouts the points of using.
                 </motion.p>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-12 sm:mb-16">
                     <motion.div className="bg-white rounded-[32px] border border-[#F4F0EC] p-6 flex flex-col shadow-sm cursor-pointer" variants={slideLeft} whileHover={{ scale: 1.08, boxShadow: '0 8px 32px #CDA27433' }} whileTap={{ scale: 0.98 }}>
                         <motion.img src="/image3.png" alt="Kitchen Design" className="w-full h-[180px] object-cover rounded-[24px] mb-6" initial="hidden" whileInView="visible" variants={zoomIn} whileHover={{ scale: 1.1 }} />
                         <motion.span className="bg-[#F4F0EC] text-[#292F36] text-xs font-medium px-4 py-1 rounded-lg mb-4 w-fit" variants={zoomIn}>Kichan Design</motion.span>
@@ -380,6 +381,110 @@ function Home() {
                     </motion.div>
                 </div>
             </motion.section>
+
+            {/* CTA Section - Matches provided design (dark, rounded, centered) */}
+            <motion.section
+                className="px-4 sm:px-6 md:px-10 lg:px-[8%] mb-16"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={stagger}
+            >
+                <motion.div
+                    className="w-full bg-[#292F36] text-center text-white rounded-[40px] md:rounded-[60px] py-16 sm:py-20 px-4 sm:px-8 flex flex-col items-center justify-center"
+                    variants={fadeIn}
+                    whileHover={{ boxShadow: '0 12px 48px #00000033', scale: 1.01 }}
+                >
+                    <motion.h2
+                        className="font-serif font-bold text-3xl sm:text-4xl md:text-5xl mb-4 tracking-tight"
+                        variants={zoomIn}
+                        whileHover={{ color: '#CDA274' }}
+                    >
+                        Wanna join the interno?
+                    </motion.h2>
+                    <motion.p
+                        className="text-sm sm:text-base md:text-lg text-gray-200 mb-8 max-w-2xl"
+                        variants={slideRight}
+                    >
+                        It is a long established fact  will be distracted.
+                    </motion.p>
+                    <Link to="/contact">
+                        <motion.button
+                            className="bg-[#CDA274] text-[#292F36] font-semibold rounded-xl px-8 sm:px-10 md:px-14 py-3 sm:py-4 text-sm sm:text-base flex items-center gap-2 shadow-md hover:shadow-lg transition"
+                            variants={zoomIn}
+                            whileHover={{ scale: 1.08, backgroundColor: '#e2b88e', boxShadow: '0 8px 32px #CDA27455' }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            Contact With Us <span className="text-lg">→</span>
+                        </motion.button>
+                    </Link>
+                </motion.div>
+            </motion.section>
+            {/* Footer Section - Dark themed */}
+            <motion.footer
+                className="bg-white text-[#292F36] pt-16 pb-8 px-4 sm:px-8 lg:px-[8%] border-t border-gray-200"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={stagger}
+            >
+                <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 md:gap-16 mb-12">
+                    {/* Brand */}
+                    <motion.div variants={fadeIn} className="space-y-5 max-w-sm">
+                        <div className="flex items-center gap-2 text-2xl font-extrabold tracking-tight">
+                            <span className="text-[#CDA274] text-3xl">▲</span>
+                            <span className="font-serif">Interno</span>
+                        </div>
+                        <p className="text-sm leading-relaxed text-gray-600">
+                            It is a long established fact that a reader will be distracted lookings.
+                        </p>
+                        <div className="flex items-center gap-5 text-gray-500 text-sm">
+                            {['f', 't', 'in', 'ig'].map(icon => (
+                                <motion.span key={icon} whileHover={{ scale: 1.2, color: '#CDA274' }} className="cursor-pointer uppercase tracking-wide">
+                                    {icon}
+                                </motion.span>
+                            ))}
+                        </div>
+                    </motion.div>
+
+                    {/* Pages */}
+                    <motion.div variants={slideLeft} className="space-y-5">
+                        <h4 className="font-serif font-semibold text-lg">Pages</h4>
+                        <ul className="space-y-3 text-sm text-gray-600">
+                            <li className="hover:text-[#CDA274] transition">About Us</li>
+                            <li className="hover:text-[#CDA274] transition">Our Projects</li>
+                            <li className="hover:text-[#CDA274] transition">Our Team</li>
+                            <li className="hover:text-[#CDA274] transition">Contact Us</li>
+                            <li className="hover:text-[#CDA274] transition">Services</li>
+                        </ul>
+                    </motion.div>
+
+                    {/* Services */}
+                    <motion.div variants={slideRight} className="space-y-5">
+                        <h4 className="font-serif font-semibold text-lg">Services</h4>
+                        <ul className="space-y-3 text-sm text-gray-600">
+                            <li className="hover:text-[#CDA274] transition">Kitchen</li>
+                            <li className="hover:text-[#CDA274] transition">Living Area</li>
+                            <li className="hover:text-[#CDA274] transition">Bathroom</li>
+                            <li className="hover:text-[#CDA274] transition">Dinning Hall</li>
+                            <li className="hover:text-[#CDA274] transition">Bedroom</li>
+                        </ul>
+                    </motion.div>
+
+                    {/* Contact */}
+                    <motion.div variants={fadeIn} className="space-y-5">
+                        <h4 className="font-serif font-semibold text-lg">Contact</h4>
+                        <div className="space-y-4 text-sm text-gray-600">
+                            <p>55 East Birchwood Ave.<br />Brooklyn, New York 11201</p>
+                            <p>contact@interno.com</p>
+                            <p>(123) 456 - 7890</p>
+                        </div>
+                    </motion.div>
+                </div>
+                <motion.div variants={fadeIn} className="max-w-7xl mx-auto border-t border-gray-200 pt-6 text-center text-[11px] sm:text-xs text-gray-500 tracking-wide">
+                    Copyright © Interno | Designed by Victorflow Templates - Powered by Webflow
+                </motion.div>
+            </motion.footer>
         </>
 
     );
