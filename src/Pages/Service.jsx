@@ -1,5 +1,7 @@
+<li>Our Products</li>
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 // Animation variants
 const stagger = {
@@ -42,7 +44,7 @@ const Service = () => {
     <>
       <motion.div className="font-serif bg-white min-h-screen" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
         {/* Header Section */}
-  <motion.div className="bg-cover bg-center h-44 flex items-center justify-center" style={{ backgroundImage: "url('/background2.png')" }} variants={fadeIn}>
+        <motion.div className="bg-cover bg-center h-44 flex items-center justify-center" style={{ backgroundImage: "url('/background2.png')" }} variants={fadeIn}>
           <motion.h2 className="bg-white rounded-xl px-12 py-6 text-3xl font-semibold shadow-md" variants={zoomIn}>Services</motion.h2>
         </motion.div>
 
@@ -87,7 +89,9 @@ const Service = () => {
         <div className="bg-[#222] rounded-2xl max-w-3xl mx-auto mb-12 py-10 text-center animate-fade-in">
           <h3 className="text-white font-semibold text-xl mb-3">Wanna join the interno?</h3>
           <p className="text-white mb-6">It is a long established fact will be distracted.</p>
-          <button className="bg-[#cdaa7c] text-white rounded-md px-8 py-3 font-semibold text-base cursor-pointer transition-all duration-300 hover:bg-[#a67c52] hover:scale-105 animate-pulse">Contact With Us &rarr;</button>
+          <Link to="/contact">
+            <button className="bg-[#cdaa7c] text-white rounded-md px-8 py-3 font-semibold text-base cursor-pointer transition-all duration-300 hover:bg-[#a67c52] hover:scale-105 animate-pulse">Contact With Us &rarr;</button>
+          </Link>
         </div>
 
         {/* Footer */}

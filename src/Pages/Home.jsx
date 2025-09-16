@@ -111,6 +111,12 @@ function Home() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
                     <motion.div className="border border-gray-200 rounded-xl p-6 sm:p-8 md:p-10 flex flex-col items-center text-center cursor-pointer" variants={flipUp} whileHover={{ scale: 1.08, boxShadow: '0 8px 32px #CDA27433' }} whileTap={{ scale: 0.98 }}>
                         <motion.h3 className="text-xl sm:text-2xl font-bold text-[#292F36] mb-4" variants={zoomIn}>Project Plan</motion.h3>
+                        <motion.h3 className="text-xl sm:text-2xl font-bold text-[#292F36] mb-4" variants={zoomIn}>Product Plan</motion.h3>
+                        {/* Products Section - Slide, Zoom, interactive cards */}
+                        Our Products
+                        <motion.div className="text-gray-500 text-lg" variants={fadeIn}>Success Product</motion.div>
+                        <motion.div className="text-gray-500 text-lg" variants={fadeIn}>Active Product</motion.div>
+                        <li className="hover:text-[#CDA274] transition">Our Products</li>
                         <motion.p className="text-gray-500 mb-8 text-sm sm:text-base" variants={fadeIn}>
                             There are many variations of the passages of lorem Ipsum from available, majority.
                         </motion.p>
